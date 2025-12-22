@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "Paris in Winter"
-date: 2025-01-01
+title: "Roggen Brot"
+date: 2025-08-12
 categories: travel
 ---
 
-![Eiffel Tower in fog](/assets/images/paris.jpg)
+![Roggen Brot](/assets/images/brot1.jpg)
 
 Walking through Paris in January felt quiet and soft.  
 The fog wrapped the city like a blanket.

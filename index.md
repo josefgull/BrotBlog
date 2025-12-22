@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Travel Notes
+title: Bread
 ---
 
-A minimalist photo journal of places I’ve been.
+A minimalist photo journal of bread i have baked.
