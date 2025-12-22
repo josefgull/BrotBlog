@@ -12,16 +12,16 @@ categories: travel
 
 jeden Tag bei mengen Für 7 Tage
 
-![Roggen Brot](/assets/images/post1/starter.jpg)
+![Roggen Brot](/assets/images/post1/starter.jpeg)
 
 
 Dann mit 500 g Mehl und 500 ml Wasser den Teig formen.
-![Roggen Brot](/assets/images/post1/teig.jpg)
+![Roggen Brot](/assets/images/post1/teig.jpeg)
 Über Nacht kühl gehen lassen. Dann fleißig falten! 
 
 Backen und schon ist es fertig.
-![Roggen Brot](/assets/images/post1/brot1.jpg)
-![Roggen Brot](/assets/images/post1/brot2.jpg)
+![Roggen Brot](/assets/images/post1/brot1.jpeg)
+![Roggen Brot](/assets/images/post1/brot2.jpeg)
 
 
 
