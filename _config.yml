@@ -1,5 +1,5 @@
 title: Travel Blog
 description: Stories from my travels
 theme: minima
-baseurl: ""
+baseurl: "/travelBlog"
 url: "https://josefgull.github.io/travelBlog"
