@@ -3,3 +3,6 @@ description: Stories from my travels
 theme: minima
 baseurl: "/travelBlog"
 url: "https://josefgull.github.io/travelBlog"
+
+plugins:
+  - jekyll-feed
