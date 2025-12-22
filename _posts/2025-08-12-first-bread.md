@@ -5,14 +5,25 @@ date: 2025-08-12
 categories: travel
 ---
 
-![Roggen Brot](/assets/images/brot1.jpg)
-
-Walking through Paris in January felt quiet and soft.  
-The fog wrapped the city like a blanket.
 
 ## Highlights
-- Morning coffee near Montmartre
-- Long walks by the Seine
-- No crowds, just time
+- 50 ml Wasser
+- 50 g Mehl
+
+jeden Tag bei mengen Für 7 Tage
+
+![Roggen Brot](/assets/images/post1/starter.jpg)
+
+
+Dann mit 500 g Mehl und 500 ml Wasser den Teig formen.
+![Roggen Brot](/assets/images/post1/teig.jpg)
+Über Nacht kühl gehen lassen. Dann fleißig falten! 
+
+Backen und schon ist es fertig.
+![Roggen Brot](/assets/images/post1/brot1.jpg)
+![Roggen Brot](/assets/images/post1/brot2.jpg)
+
+
+
 
 Sometimes traveling slow is the best way to see a place.
