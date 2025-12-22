@@ -1,7 +1,8 @@
 ---
 layout: post
 title: "Paris in Winter"
-date: 2025-01-05
+date: 2025-01-01
+categories: travel
 ---
 
 ![Eiffel Tower in fog](/assets/images/paris.jpg)
