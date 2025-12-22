@@ -1,0 +1,3 @@
+title: Travel Blog
+description: Stories from my travels
+theme: minima
