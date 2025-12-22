@@ -1,8 +1,8 @@
 title: Brot Blog
 description: Stories from my breads
 theme: minima
-baseurl: "/travelBlog"
-url: "https://josefgull.github.io/travelBlog"
+baseurl: "/BrotBlog"
+url: "https://josefgull.github.io/BrotBlog"
 
 plugins:
   - jekyll-feed

@@ -2,9 +2,7 @@
 layout: post
 title: "Roggen Brot"
 date: 2025-12-08
-categories: travel
 ---
-
 
 ## Starter
 Jeden Tag 
@@ -20,8 +18,3 @@ Dann mit 500 g Mehl und 500 ml Wasser den Teig formen.
 Backen und schon ist es fertig.
 ![Roggen Brot]({{ site.baseurl }}/assets/images/post1/brot1.jpeg)
 ![Roggen Brot]({{ site.baseurl }}/assets/images/post1/brot2.jpeg)
-
-
-
-
-Sometimes traveling slow is the best way to see a place.
