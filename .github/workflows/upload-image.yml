@@ -27,7 +27,7 @@ jobs:
 
       - name: Validate inputs
         run: |
-          if ! echo "${{ github.event.inputs.post_folder }}" | grep -qE '^[a-zA-Z0-9_-]+$'; then
+          if ! echo "${{ github.event.inputs.post_folder }}" | grep -qE '^[a-zA-Z0-9][a-zA-Z0-9_-]*$'; then
             echo "Error: post_folder contains invalid characters" >&2
             exit 1
           fi

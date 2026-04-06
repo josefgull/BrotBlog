@@ -202,7 +202,7 @@ permalink: /upload/
         return r.json();
       })
       .then(function () {
-        var mdPath = "{{ site.baseurl }}/assets/images/" + folder + "/" + file.name;
+        var mdPath = "{{ site.baseurl }}/assets/images/" + folder + "/" + safeFilename;
         var snippet = "![](" + mdPath + ")";
         snippetEl.textContent = snippet;
         resultEl.style.display = "block";
