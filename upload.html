@@ -71,7 +71,7 @@ permalink: /upload/
 
   <div class="form-group">
     <label for="token">GitHub Personal Access Token</label>
-    <input type="password" id="token" placeholder="ghp_..." autocomplete="off">
+    <input type="password" id="token" placeholder="ghp_..." autocomplete="one-time-code">
     <p class="hint">
       Benötigt <code>contents: write</code> Berechtigung.
       <a href="https://github.com/settings/tokens/new?scopes=repo&description=BrotBlog+Upload" target="_blank" rel="noopener">Token erstellen</a>
@@ -144,6 +144,17 @@ permalink: /upload/
 
     if (!token || !folder || !file) return;
 
+    // Reject path traversal or unsafe characters in folder/filename
+    if (/[^a-zA-Z0-9_\-]/.test(folder) || folder.indexOf("..") !== -1) {
+      setStatus("Fehler: Ordnername enthält ungültige Zeichen.", "error");
+      return;
+    }
+    var safeFilename = file.name.replace(/[^a-zA-Z0-9_\-\.]/g, "_");
+    if (safeFilename.indexOf("..") !== -1) {
+      setStatus("Fehler: Dateiname enthält ungültige Zeichen.", "error");
+      return;
+    }
+
     uploadBtn.disabled = true;
     setStatus("", "");
 
@@ -151,14 +162,14 @@ permalink: /upload/
     reader.onload = function (e) {
       // e.target.result is a data URL; extract base64 content
       var base64 = e.target.result.split(",")[1];
-      var filename = file.name;
+      var filename = safeFilename;
       var path = "assets/images/" + folder + "/" + filename;
       var apiUrl = "https://api.github.com/repos/" + OWNER + "/" + REPO + "/contents/" + path;
 
       // Check whether file already exists (to get its SHA for updates)
       fetch(apiUrl, {
         headers: {
-          "Authorization": "token " + token,
+          "Authorization": "Bearer " + token,
           "Accept": "application/vnd.github+json"
         }
       })
@@ -175,7 +186,7 @@ permalink: /upload/
         return fetch(apiUrl, {
           method: "PUT",
           headers: {
-            "Authorization": "token " + token,
+            "Authorization": "Bearer " + token,
             "Accept": "application/vnd.github+json",
             "Content-Type": "application/json"
           },
