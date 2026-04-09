@@ -1,0 +1,61 @@
+name: Upload Image
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_url:
+        description: 'URL of the image to upload'
+        required: true
+        type: string
+      post_folder:
+        description: 'Post folder name inside assets/images/ (e.g. post2)'
+        required: true
+        type: string
+      image_name:
+        description: 'Filename for the saved image (e.g. brot.jpeg)'
+        required: true
+        type: string
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate inputs
+        run: |
+          if ! echo "${{ github.event.inputs.post_folder }}" | grep -qE '^[a-zA-Z0-9][a-zA-Z0-9_-]*$'; then
+            echo "Error: post_folder contains invalid characters" >&2
+            exit 1
+          fi
+          if ! echo "${{ github.event.inputs.image_name }}" | grep -qE '^[a-zA-Z0-9_.-]+$'; then
+            echo "Error: image_name contains invalid characters" >&2
+            exit 1
+          fi
+
+      - name: Create post image folder
+        run: mkdir -p "assets/images/${{ github.event.inputs.post_folder }}"
+
+      - name: Download image
+        run: |
+          curl -L --fail -o "assets/images/${{ github.event.inputs.post_folder }}/${{ github.event.inputs.image_name }}" \
+            "${{ github.event.inputs.image_url }}"
+
+      - name: Validate downloaded file is an image
+        run: |
+          mime=$(file --mime-type -b "assets/images/${{ github.event.inputs.post_folder }}/${{ github.event.inputs.image_name }}")
+          if ! echo "$mime" | grep -q "^image/"; then
+            echo "Error: downloaded file is not an image (detected: $mime)" >&2
+            exit 1
+          fi
+
+      - name: Commit and push image
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "assets/images/${{ github.event.inputs.post_folder }}/${{ github.event.inputs.image_name }}"
+          git commit -m "Add image: ${{ github.event.inputs.post_folder }}/${{ github.event.inputs.image_name }}"
+          git push
